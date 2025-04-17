@@ -1,0 +1,100 @@
+.works-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  
+    .top-section, .bottom-section {
+      display: flex;
+      width: 100%;
+    }
+  
+    /* Top Section */
+    .top-section {
+      .large-left {
+        width: 65%;
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+      .small-right {
+        width: 35%;
+        display: flex;
+        flex-direction: column;
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+    }
+  
+    /* Bottom Section */
+    .bottom-section {
+      .small-left {
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+      .large-right {
+        width: 66.66%;
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+        }
+      }
+    }
+
+    .bottom-section2 {
+        .large {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          img {
+            width: 100%;
+            height: 100%;
+            display: block;
+          }
+        }
+      }
+      .bottom-section3{
+        .large2{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            img {
+              width: 100%;
+              height: 100%;
+              display: block;
+            }
+          }
+        }
+
+        .bottom-section4{
+            .large3{
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                img {
+                  width: 100%;
+                  height: 100%;
+                  display: block;
+                }
+              }
+            }
+      
+  
+    /* Remove all gaps and borders */
+    * {
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
+  }
