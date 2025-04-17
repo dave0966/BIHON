@@ -1,4 +1,4 @@
-<!-- Navbar at the top (always visible) -->
+
 <nav class="navbar" id="navbar" [class.mobile-menu-active]="isMenuOpen" [class.scrolled]="scrolled" [class.dark-text]="isMenuOpen && darkText">
   <a class="logo" routerLink="/">BIHON</a>
   <div class="nav-links">
@@ -14,10 +14,8 @@
   </button>
 </nav>
 
-<!-- Router outlet for all dynamic content -->
 <router-outlet></router-outlet>
 
-<!-- Landing page content (only shown on home route) -->
 <div *ngIf="isHomeRoute()">
   <div class="fullscreen-section bg1">
     <div class="content-overlay">
@@ -48,7 +46,7 @@
       </div>
       
       <div class="footer-column">
-        <h4>Quick Links</h4>
+        <h4>About the Dev</h4>
         <ul>
           <li><a href="#">Home</a></li>
           <li><a href="#">Projects</a></li>
@@ -59,7 +57,7 @@
       </div>
       
       <div class="footer-column">
-        <h4>Quick Links</h4>
+        <h4>About the Artist</h4>
         <ul>
           <li><a routerLink="/">Home</a></li>
           <li><a routerLink="/projects">Projects</a></li>
@@ -74,7 +72,7 @@
         <ul class="contact-info">
           <li><img src="assets/email.svg" alt="Email"> info@bihon.com</li>
           <li><img src="assets/phone.svg" alt="Phone"> +63 9123456789</li>
-          <li><img src="assets/home.svg" alt="Location"> Marinig Eyy</li>
+          <li><img src="assets/home.svg" alt="Location">Sa Imong Tanan</li>
           <li><img src="assets/clock.svg" alt="Hours"> Mon-Fri: 9AM - 6PM</li>
           <li><img src="assets/link.svg" alt="Website"> www.bihon.com</li>
         </ul>
@@ -82,7 +80,7 @@
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; 2023 BIHON. All Rights Reserved.</p>
+      <p>&copy; 2025 BIHON. All Rights Reserved. (pls contact us ala na kami money)</p>
       <div class="legal-links">
         <a href="#">Cookie Policy</a>
       </div>
