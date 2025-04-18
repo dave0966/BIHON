@@ -1,11 +1,15 @@
 
 <nav class="navbar" id="navbar" [class.mobile-menu-active]="isMenuOpen" [class.scrolled]="scrolled" [class.dark-text]="isMenuOpen && darkText">
-  <a class="logo" routerLink="/">BIHON</a>
+  <div class="logo-container">
+    <a class="logo" routerLink="/">BIHON</a>
+    <span class="logo-subtext">Creatives</span>
+  </div>
   <div class="nav-links">
     <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">PROJECTS</a>
     <a routerLink="/works" routerLinkActive="active" (click)="closeMenu()">WORKS</a>
-    <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">ABOUT</a>
-    <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">CONTACT</a>
+    <a (click)="scrollToBG2()" routerLink="/" [skipLocationChange]="isHomeRoute()">ABOUT</a>
+    <a href="javascript:void(0)" (click)="scrollToFooter(); closeMenu()">CONTACT</a>
+
   </div>
   <button class="mobile-menu-btn" id="mobileMenuBtn" (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen">
     <span></span>
@@ -22,8 +26,15 @@
     </div>
   </div>
 
-  <div class="fullscreen-section bg2">
-    <div class="content-overlay">
+  <div class="fullscreen-section bg2" id="bg2">
+    <div class="content-overlay right-aligned">
+      <h2>Hi</h2>
+      
+        <p>I'm Bhon, and I'm an array of visual artist that has a passion for using photography and cinematography to tell tales and capture moments in time.</p>
+        
+        <p>By merging photography and videography, I can provide a fully immersive visual experience. Every moment, every occasion, and each story is unique, and I know how to record it in the best format. I have both photographic and narrative videos, depending on your preference for timelessness and quietness.</p>
+        
+        <p>I'm ecstatic to participate in your visual adventure. Please don't hesitate to get in touch if you have an idea for your next project, a special occasion that needs to be documented, or you're just curious to learn more about the magic of photography and videography.</p>
     </div>
   </div>
 
@@ -32,10 +43,13 @@
     </div>
   </div>
 
-  <div class="black-footer">
+  <div class="black-footer" id="footer">
     <div class="footer-content">
       <div class="footer-column">
-        <h3>BIHON</h3>
+        <div class="footer-logo-container">
+          <h3>BIHON</h3>
+          <span class="logo-subtext">Creatives</span>
+        </div>
         <p>Creativity in a form of mastery and passion for the industry</p>
         <div class="social-icons">
           <a href="#"><img src="assets/facebook.svg" alt="Facebook"></a>
@@ -45,25 +59,13 @@
         </div>
       </div>
       
-      <div class="footer-column">
-        <h4>About the Dev</h4>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Projects</a></li>
-          <li><a href="#">Works</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      
-      <div class="footer-column">
-        <h4>About the Artist</h4>
+      <div class="footer-column-mid">
+        <h4>Quick Links</h4>
         <ul>
           <li><a routerLink="/">Home</a></li>
           <li><a routerLink="/projects">Projects</a></li>
           <li><a routerLink="/works">Works</a></li>
-          <li><a routerLink="/about">About</a></li>
-          <li><a routerLink="/contact">Contact</a></li>
+          <li><a (click)="scrollToBG2()" routerLink="/" [skipLocationChange]="isHomeRoute()">About</a></li>
         </ul>
       </div>
       
