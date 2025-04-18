@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; // Added Router import
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
@@ -9,27 +9,48 @@ import { Router } from '@angular/router'; // Added Router import
 export class ProjectsComponent {
   currentRoute: string = '/';
   projects = [
-    { image: 'assets/BTC.jpg', title: 'BTC SAMGYUPWINGS' },
-    { image: 'assets/GYPSY.jpg', title: 'G Y P S Y' },
-    { image: 'assets/Onsight.jpg', title: 'ONSIGHT' }
+    { 
+      image: 'assets/BTC.jpg', 
+      title: 'BTC SAMGYUPWINGS',
+      route: '/btc' // Added route property
+    },
+    { 
+      image: 'assets/GYPSY.jpg', 
+      title: 'G Y P S Y',
+      route: '/gypsy' // Added route property
+    },
+    { 
+      image: 'assets/Onsight.jpg', 
+      title: 'ONSIGHT',
+      externalUrl: 'https://www.youtube.com/watch?v=eH-UH7W7qd8&ab_channel=AwfulSaintz' // Added YouTube URL
+    }
   ];
   
-  constructor(private router: Router) {} // Injected Router
+  constructor(private router: Router) {}
+
   isHomeRoute(): boolean {
     return this.currentRoute === '/';
   }
+
+  // New method to handle project navigation
+  navigateToProject(project: any) {
+    if (project.externalUrl) {
+      // Open YouTube link in new tab
+      window.open(project.externalUrl, '_blank');
+    } else if (project.route) {
+      // Navigate to internal route
+      this.router.navigate([project.route]);
+    }
+  }
+
   scrollToBG2() {
-    // Check if we're already on the home route
     if (this.router.url === '/' || this.router.url === '/home') {
-      // If already on home, just scroll to section
       this.scrollToBG2Section();
     } else {
-      // If not on home, navigate first then scroll
       this.router.navigate(['/']).then(() => {
-        // Wait for navigation to complete
         setTimeout(() => {
           this.scrollToBG2Section();
-        }, 100); // Small delay to ensure DOM is ready
+        }, 100);
       });
     }
   }
@@ -39,7 +60,7 @@ export class ProjectsComponent {
     if (bg2Element) {
       bg2Element.scrollIntoView({ 
         behavior: 'smooth',
-        block: 'start' // Aligns top of element with top of viewport
+        block: 'start'
       });
     }
   }

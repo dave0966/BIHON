@@ -9,8 +9,6 @@ import { Router } from '@angular/router'; // Add this import
 export class WorksComponent implements OnInit {
   currentRoute: string = '/';
 
-  
-
   constructor(private router: Router) { } // Inject Router here
   isHomeRoute(): boolean {
     return this.currentRoute === '/';

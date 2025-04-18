@@ -11,7 +11,7 @@ export class AppComponent implements OnInit {
   currentRoute: string = '/';
   isMenuOpen = false;
   scrolled = false;
-  darkText = false; // Added this property
+  darkText = false; 
 
   constructor(private router: Router) {
     this.router.events.pipe(

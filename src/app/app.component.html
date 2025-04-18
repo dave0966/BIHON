@@ -7,7 +7,7 @@
   <div class="nav-links">
     <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">PROJECTS</a>
     <a routerLink="/works" routerLinkActive="active" (click)="closeMenu()">WORKS</a>
-    <a (click)="scrollToBG2()" routerLink="/" [skipLocationChange]="isHomeRoute()">ABOUT</a>
+    <a (click)="scrollToBG2()" routerLink="/" [skipLocationChange]="isHomeRoute()" (click)="closeMenu()">ABOUT</a>
     <a href="javascript:void(0)" (click)="scrollToFooter(); closeMenu()">CONTACT</a>
 
   </div>

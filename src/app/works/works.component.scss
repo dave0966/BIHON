@@ -98,3 +98,24 @@
       border: none;
     }
   }
+  .footer-logo-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+  
+  .footer-logo-container h3 {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+  
+  .footer-column .logo-subtext {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 0.7rem;
+    font-weight: 100;
+    letter-spacing: 3.1px;
+    margin-top: -5px;
+    margin-left: 1px;
+  }
