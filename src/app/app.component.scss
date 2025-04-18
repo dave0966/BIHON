@@ -1,0 +1,126 @@
+// Right-aligned content overlay with scroll animation
+.content-overlay.right-aligned {
+    left: auto;
+    right: 10%;
+    width: 30%;
+    max-width: 600px;
+    
+    // Initial hidden state
+    opacity: 0;
+    transform: translateX(100px) translateY(-50%);
+    
+    // Animation properties
+    transition: all 1s ease-out;
+    
+    h2 {
+      text-align: left;
+      margin-bottom: 1rem;
+      font-family: "Inter", sans-serif;
+      font-size: 5rem;
+      font-weight: 100;
+      transition: inherit;
+    }
+    
+    p {
+      text-align: justify;
+      white-space: pre-line;
+      font-family: "Inter", sans-serif;
+      font-size: 1rem;
+      font-weight: 100;
+      transition: inherit;
+    }
+    
+    // Animated state (when section is in view)
+    .bg2.in-view & {
+      opacity: 1;
+      transform: translateX(0) translateY(-50%);
+      
+      h2, p {
+        opacity: 1;
+      }
+    }
+  }
+  
+  // Modern CSS Scroll-Driven Animations (for supported browsers)
+  @supports (animation-timeline: view()) {
+    .content-overlay.right-aligned {
+      animation: slideInFromLeft linear forwards;
+      animation-timeline: view();
+      animation-range: entry 0% entry 100%;
+      
+      .bg2.in-view & {
+        animation: none; // Disable JS animation if CSS animation is supported
+      }
+    }
+    
+    @keyframes slideInFromLeft {
+      from {
+        opacity: 0;
+        transform: translateX(100px) translateY(-50%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0) translateY(-50%);
+      }
+    }
+  }
+  
+  // Mobile responsiveness (your existing queries)
+  @media (max-width: 1024px) {
+    .content-overlay.right-aligned {
+      right: 5%;
+      width: 60%;
+      top: 35%;
+      
+      h2 {
+        font-size: 4rem;
+      }
+      p {
+        font-size: 0.6rem;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .content-overlay.right-aligned {
+      right: 5%;
+      width: 43%;
+      top: 45%;
+      
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 0.6rem;
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    .content-overlay.right-aligned {
+      right: 5%;
+      width: 40%;
+      top: 45%;
+      
+      h2 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .content-overlay.right-aligned {
+      right: 5%;
+      width: 40%;
+      
+      h2 {
+        font-size: 4rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
